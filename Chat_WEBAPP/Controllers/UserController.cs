@@ -23,7 +23,7 @@ namespace Chat_WEBAPP.Controllers
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet("{username}")]
         public User Get(string username)
         {
             return _chatContext.Users.FirstOrDefault(s => s.Username == username);
@@ -36,7 +36,7 @@ namespace Chat_WEBAPP.Controllers
             _chatContext.SaveChanges();
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{username}")]
         public void Put(string username, [FromBody] User entity)
         {
             var user = _chatContext.Users.FirstOrDefault(s => s.Username == username);
@@ -47,7 +47,7 @@ namespace Chat_WEBAPP.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{username}")]
         public void Delete(string username)
         {
             var User = _chatContext.Users.FirstOrDefault(s => s.Username == username);

@@ -9,11 +9,14 @@
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required] public int FrindID { get; set; }
+        private int FrindID { get; set; }
+        private int UserID { get; set; }
+        private int FriendID { get; set; }
+        private DateTime AddedAt { get; set; }
+
         [ForeignKey("UserID")]
-        [Required] public User UserID { get; set; }
-        [ForeignKey("UserID")]
-        [Required] public User FriendID { get; set; }
-        [Required] public DateTime AddedAt { get; set; }
+        private User user { get; set; }
+       [ForeignKey("FriendID")]
+       private User friend { get; set; }
     }
 }

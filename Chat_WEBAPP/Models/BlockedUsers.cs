@@ -3,17 +3,23 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Chat_WEBAPP.Models
 {
-    [Table("Users")]
+    [Table("BlockedUsers")]
     public class BlockedUsers
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required] public int BlockedUserID { get; set; }
+        private int BlockedUserID { get; set; }
+        private int UserID { get; set; }
+        private int BlockedID { get; set; }
+        private DateTime BlokedAt { get; set; }
+
         [ForeignKey("UserID")]
-        [Required] public User UserID { get; set; }
-        [ForeignKey("UserID")]
-        [Required] public User BlockedID { get; set; }
-        [Required] public DateTime BlokedAt { get; set; }
+        private User User { get; set; }
+        [ForeignKey("BlockedID")]
+        private User BlockedUser { get; set; }
+
+
+
 
     }
 }

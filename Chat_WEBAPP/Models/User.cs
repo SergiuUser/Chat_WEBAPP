@@ -8,14 +8,14 @@
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required] public int UserID { get; set; }
-        [Required] public string Username { get; set; }
-        [Required] public string FirstName { get; set; }
-        [Required] public string LastName { get; set; }
-        [Required] public string Email { get; set; }
-        [Required] public BinaryData PasswordHash { get; set; }
-        [Required] public DateTime CreatedAt { get; set; }
-        [Required] public DateTime LastUpdated { get; set; }
+         public int UserID { get; set; }
+         public string Username { get; set; }
+         public string FirstName { get; set; }
+         public string LastName { get; set; }
+         public string Email { get; set; }
+         public string PasswordHash { get; set; }
+         public DateTime CreatedAt { get; set; }
+         public DateTime LastUpdated { get; set; }
 
     }
 }

@@ -8,13 +8,16 @@
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required] public int ChatMessageID { get; set; }
+        private int ChatMessageID { get; set; }
+        private int ChatID { get; set; }
+        private int SenderID { get; set; }
+        private string Content { get; set; }
+        private DateTime CreatedAt { get; set; }
+        private int Edited { get; set; }
+
         [ForeignKey("ChatID")]
-        [Required] public Chat ChatID { get; set; }
-        [ForeignKey("ChatID")]
-        [Required] public Chat SenderID { get; set; }
-        [Required] public string Content { get; set; }
-        [Required] public DateTime CreatedAt { get; set; }
-        [Required] public int Edited { get; set; }
+        private Chat chat { get; set; }
+        [ForeignKey("SenderID")]
+        private User userSender { get; set; }
     }
 }
