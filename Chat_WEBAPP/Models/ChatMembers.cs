@@ -8,17 +8,17 @@
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int ChatMemberID { get; set; }
-        private int ChatID { get; set; }
-        private int MemberID { get; set; }
-        private int RoleID { get; set; }
-        private DateTime JoiedAt { get; set; }
+        public int ChatMemberID { get; set; }
+        public int ChatID { get; set; }
+        public int MemberID { get; set; }
+        public int RoleID { get; set; }
+        public DateTime JoinedAt { get; set; }
 
         [ForeignKey("ChatID")]
-        private Chat chat { get; set; }
+        public Chat chat { get; set; }
         [ForeignKey("MemberID")]
-        private User userMember { get; set; }
+        public User userMember { get; set; }
         [ForeignKey("RoleID")]
-        private ChatRoles role { get; set;}
+        public ChatRoles role { get; set;}
     }
 }

@@ -10,11 +10,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ChatContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("ChatConnStr")));
 
-builder.Services.Configure<RequestLocalizationOptions>(options =>
-{
-    options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en-US");
-});
-
 
 var app = builder.Build();
 

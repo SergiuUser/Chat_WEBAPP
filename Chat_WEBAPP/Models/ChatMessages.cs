@@ -8,12 +8,12 @@
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int ChatMessageID { get; set; }
-        private int ChatID { get; set; }
-        private int SenderID { get; set; }
-        private string Content { get; set; }
-        private DateTime CreatedAt { get; set; }
-        private int Edited { get; set; }
+        public int ChatMessageID { get; set; }
+        public int ChatID { get; set; }
+        public int SenderID { get; set; }
+        public string Content { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public int Edited { get; set; }
 
         [ForeignKey("ChatID")]
         private Chat chat { get; set; }

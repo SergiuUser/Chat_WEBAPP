@@ -8,15 +8,15 @@ namespace Chat_WEBAPP.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int BlockedUserID { get; set; }
-        private int UserID { get; set; }
-        private int BlockedID { get; set; }
-        private DateTime BlokedAt { get; set; }
+        public int BlockedUserID { get; set; }
+        public int UserID { get; set; }
+        public int BlockedID { get; set; }
+        public DateTime BlocketAt    { get; set; }
 
         [ForeignKey("UserID")]
-        private User User { get; set; }
+        public User User { get; set; }
         [ForeignKey("BlockedID")]
-        private User BlockedUser { get; set; }
+        public User BlockedUser { get; set; }
 
 
 

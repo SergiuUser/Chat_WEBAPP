@@ -12,7 +12,6 @@ namespace Chat_WEBAPP.Context
         }
 
         public DbSet<User> Users { get; set; }
-        /*
         public DbSet<BlockedUsers> BlockedUsers { get; set; }
         public DbSet<Chat> Chats { get; set; }
         public DbSet<ChatMembers> ChatMembers { get; set; }
@@ -21,6 +20,5 @@ namespace Chat_WEBAPP.Context
         public DbSet<MessageReactions> MessageReactions { get; set; }
         public DbSet<ReactionType> reactionTypes { get; set; }  
         public DbSet<UserFriends> UserFriends { get; set; }   
-        */
     }
 }

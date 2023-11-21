@@ -8,16 +8,16 @@
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int MessageReactionID { get; set; }
-        private int MessageID { get; set; }
-        private int UserID { get; set; }
-        private int ReactionTypeID { get; set; }
-        private DateTime CreatedAt { get; set; }
+        public int MessageReactionID { get; set; }
+        public int MessageID { get; set; }
+        public int UserID { get; set; }
+        public int ReactionTypeID { get; set; }
+        public DateTime CreatedAt { get; set; }
         [ForeignKey("MessageID")]
-        private ChatMessages chatMessages { get; set; }
+        public ChatMessages chatMessages { get; set; }
         [ForeignKey("UserID")]
-        private User user { get; set; }
+        public User user { get; set; }
         [ForeignKey("ReactionTypeID")]
-        private ReactionType reactionType { get; set; }
+        public ReactionType reactionType { get; set; }
     }
 }

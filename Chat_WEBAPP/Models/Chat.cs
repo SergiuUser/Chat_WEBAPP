@@ -8,16 +8,16 @@
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int ChatID { get; set; }
-        private string Name { get; set; }
-        private string Description { get; set; }
-        private string Type { get; set; }
-        private int CreatorID { get; set; }
-        private DateTime CreatedAt { get; set; }
-        private DateTime LastUpdated { get; set;}
+        public int ChatID { get; set; }
+        public string ChName { get; set; }
+        public string ChDescription { get; set; }
+        public string Chtype { get; set; }
+        public int CreatorID { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime LastUpdated { get; set;}
 
         [ForeignKey("CreatorID")]
-        private User userCreator { get; set; }
+        public User userCreator { get; set; }
 
     }
 }

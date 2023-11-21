@@ -8,7 +8,7 @@
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int ChatRoleID { get; set; }
-        private string RoleName { get; set; }
+        public int ChatRoleID { get; set; }
+        public string RoleName { get; set; }
     }
 }

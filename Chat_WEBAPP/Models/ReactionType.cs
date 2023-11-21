@@ -8,8 +8,8 @@
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required] public int ReactionTypeID { get; set; }
-        [Required] public string Name { get; set; }
+        public int ReactionTypeID { get; set; }
+        public string RcName { get; set; }
         
     }
 }
