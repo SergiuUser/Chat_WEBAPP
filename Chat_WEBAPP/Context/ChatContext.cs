@@ -1,4 +1,5 @@
-﻿using Chat_WEBAPP.Models;
+﻿using Chat_WEBAPP.Controllers;
+using Chat_WEBAPP.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Chat_WEBAPP.Context
@@ -20,5 +21,6 @@ namespace Chat_WEBAPP.Context
         public DbSet<MessageReactions> MessageReactions { get; set; }
         public DbSet<ReactionType> reactionTypes { get; set; }  
         public DbSet<UserFriends> UserFriends { get; set; }   
+        public DbSet<UserAuthController> UserAuth { get; set; }   
     }
 }

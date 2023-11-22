@@ -12,10 +12,13 @@
          public string Username { get; set; }
          public string FirstName { get; set; }
          public string LastName { get; set; }
+         [Required]
+         [EmailAddress]
          public string Email { get; set; }
-         public string PasswordHash { get; set; }
          public DateTime CreatedAt { get; set; }
          public DateTime LastUpdated { get; set; }
+         [Required]
+         public string PasswordHash { get; set; }
 
     }
 }

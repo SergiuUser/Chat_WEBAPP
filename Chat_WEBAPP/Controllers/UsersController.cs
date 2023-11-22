@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Chat_WEBAPP.Context;
 using Chat_WEBAPP.Models;
+using Chat_WEBAPP.Services;
+using System.Net;
 
 namespace Chat_WEBAPP.Controllers
 {
@@ -98,5 +100,8 @@ namespace Chat_WEBAPP.Controllers
         {
             return _context.Users.Any(e => e.UserID == id);
         }
+
+
+
     }
 }
