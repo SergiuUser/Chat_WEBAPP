@@ -19,6 +19,7 @@
          public DateTime LastUpdated { get; set; }
          [Required]
          public string PasswordHash { get; set; }
+         public string AuthRole {  get; set; }
 
     }
 }

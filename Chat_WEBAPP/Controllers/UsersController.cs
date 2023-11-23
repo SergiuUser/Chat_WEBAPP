@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Chat_WEBAPP.Context;
 using Chat_WEBAPP.Models;
-using Chat_WEBAPP.Services;
-using System.Net;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Chat_WEBAPP.Controllers
 {
@@ -23,14 +17,14 @@ namespace Chat_WEBAPP.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet, Authorize(Roles = "Admin")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), Authorize(Roles = "Admin")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             var user = await _context.Users.FindAsync(id);
@@ -43,7 +37,7 @@ namespace Chat_WEBAPP.Controllers
             return user;
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id}"), Authorize(Roles = "Admin")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
             if (id != user.UserID)
@@ -81,7 +75,7 @@ namespace Chat_WEBAPP.Controllers
             return CreatedAtAction("GetUser", new { id = user.UserID }, user);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteUser(int id)
         {
             var user = await _context.Users.FindAsync(id);
